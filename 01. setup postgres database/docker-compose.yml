@@ -1,0 +1,20 @@
+services:
+    soccer-postgres:
+        image: postgres
+        environment:
+            - POSTGRES_USER=longtong
+            - POSTGRES_PASSWORD=longtong
+            - POSTGRES_DB=soccer
+        volumes:
+            - ./data/:/var/lib/postgresql/data
+        ports:
+            - 5432:5432
+    pgadmin:
+        image: dpage/pgadmin4
+        depends_on:
+            - soccer-postgres
+        environment:
+            - PGADMIN_DEFAULT_EMAIL=user@domain.com
+            - PGADMIN_DEFAULT_PASSWORD=mysecret
+        ports:
+            - 80:80
