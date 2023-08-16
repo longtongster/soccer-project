@@ -1,4 +1,7 @@
+# my additions
 setup postgres database/data
+*.pdf
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
